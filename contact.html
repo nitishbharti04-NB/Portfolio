@@ -147,7 +147,7 @@
     </div>
 
     <div class="panel reveal" style="animation-delay:0.1s">
-      <form onsubmit="event.preventDefault(); alert('Thanks! This is a demo form — connect it to a backend or service like Formspree to receive messages.');">
+      <form id="contactForm">
         <div class="field-row">
           <div class="field">
             <label for="name">Your name</label>
@@ -171,8 +171,8 @@
           <label for="message">Tell me more</label>
           <textarea id="message" placeholder="What does the current process look like, and what's slow about it?"></textarea>
         </div>
-        <p class="form-note">This form is a static demo — connect it to Formspree, Getform, or a backend to actually receive submissions.</p>
-        <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send message →</button>
+        <p class="form-note" id="formNote">Your message goes straight to my inbox — I reply within 24 hours.</p>
+        <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self:flex-start">Send message →</button>
       </form>
     </div>
 
@@ -191,5 +191,42 @@
 
 <script src="script.js"></script>
 <noscript><style>.reveal{opacity:1!important;}</style></noscript>
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHd2ZlgEEhWUnVzhDvUi3DkkMFg1SAT8lBhS2HKY6gMyB6bNRDxHSjnQ0RN8e4GZzd1Q/exec";
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    const note = document.getElementById('formNote');
+    const payload = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      type: document.getElementById('type').value,
+      message: document.getElementById('message').value
+    };
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+      .then(() => {
+        note.textContent = "Thanks! Your message has been sent — I'll reply within 24 hours.";
+        note.style.color = 'var(--accent-teal)';
+        btn.textContent = 'Sent ✓';
+        document.getElementById('contactForm').reset();
+      })
+      .catch(() => {
+        note.textContent = "Something went wrong sending that. Please try again or email me directly.";
+        note.style.color = 'var(--accent-coral)';
+        btn.textContent = 'Send message →';
+        btn.disabled = false;
+      });
+  });
+</script>
 </body>
 </html>
