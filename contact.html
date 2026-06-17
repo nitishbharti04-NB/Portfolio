@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Nitish Kumar Bharti</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-head { padding-top: 90px; padding-bottom: 20px; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+  }
+
+  .contact-channel {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-channel:last-child { border-bottom: none; }
+  .channel-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    background: rgba(0,224,199,0.1);
+    color: var(--accent-teal);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .channel-label { font-size: 0.78rem; color: var(--text-muted); }
+  .channel-value { font-size: 0.98rem; color: var(--text-primary); font-weight: 500; }
+
+  .availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent-teal);
+    background: rgba(0,224,199,0.08);
+    border: 1px solid rgba(0,224,199,0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-top: 24px;
+  }
+  .availability-badge .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent-teal);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  form { display: flex; flex-direction: column; gap: 18px; }
+  .field label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    background: var(--bg-base);
+    border: 1px solid var(--line-bright);
+    border-radius: var(--radius-sm);
+    padding: 13px 14px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--accent-teal);
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  textarea { resize: vertical; min-height: 120px; }
+
+  .form-note { font-size: 0.78rem; color: var(--text-muted); margin-top: -6px; }
+
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-texture"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>Nitish K. Bharti</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html" class="nav-cta active">Hire Me</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Get In Touch</span>
+    <h1 class="reveal">Tell me about the report that's eating your week.</h1>
+    <p style="max-width:520px; margin-top:16px" class="reveal">Freelance dashboard builds, full-time roles, or a quick consult — reply within 24 hours, usually faster.</p>
+  </div>
+</header>
+
+<section class="section-tight">
+  <div class="wrap contact-grid">
+
+    <div class="reveal">
+      <div class="contact-channel">
+        <div class="channel-icon">@</div>
+        <div><div class="channel-label">Email</div><div class="channel-value">hello@nitishbharti.com</div></div>
+      </div>
+      <div class="contact-channel">
+        <div class="channel-icon">in</div>
+        <div><div class="channel-label">LinkedIn</div><div class="channel-value">linkedin.com/in/nitishbharti</div></div>
+      </div>
+      <div class="contact-channel">
+        <div class="channel-icon">📍</div>
+        <div><div class="channel-label">Based in</div><div class="channel-value">New Delhi, India</div></div>
+      </div>
+      <div class="contact-channel">
+        <div class="channel-icon">⏱</div>
+        <div><div class="channel-label">Typical response time</div><div class="channel-value">Within 24 hours</div></div>
+      </div>
+
+      <div class="availability-badge"><span class="pulse"></span>Open to freelance &amp; full-time opportunities</div>
+    </div>
+
+    <div class="panel reveal" style="animation-delay:0.1s">
+      <form onsubmit="event.preventDefault(); alert('Thanks! This is a demo form — connect it to a backend or service like Formspree to receive messages.');">
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="Anjali Mehta" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@company.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="type">What do you need?</label>
+          <select id="type">
+            <option>A new Power BI dashboard</option>
+            <option>SQL / data pipeline automation</option>
+            <option>Full-time MIS Manager role</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Tell me more</label>
+          <textarea id="message" placeholder="What does the current process look like, and what's slow about it?"></textarea>
+        </div>
+        <p class="form-note">This form is a static demo — connect it to Formspree, Getform, or a backend to actually receive submissions.</p>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send message →</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-meta">© 2026 Nitish Kumar Bharti · New Delhi, India</div>
+    <ul class="footer-links">
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<noscript><style>.reveal{opacity:1!important;}</style></noscript>
+</body>
+</html>

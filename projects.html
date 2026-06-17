@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Nitish Kumar Bharti</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-head { padding-top: 90px; padding-bottom: 20px; }
+  .filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .filter-pill {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--line-bright);
+    color: var(--text-secondary);
+    cursor: pointer;
+    background: transparent;
+  }
+  .filter-pill.active {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+    background: rgba(0,224,199,0.07);
+  }
+
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .proj-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .proj-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-bright);
+  }
+  .proj-visual {
+    height: 170px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .proj-visual.v-teal { background: linear-gradient(135deg, rgba(0,224,199,0.16), rgba(0,224,199,0.02)); }
+  .proj-visual.v-amber { background: linear-gradient(135deg, rgba(255,180,84,0.16), rgba(255,180,84,0.02)); }
+  .proj-visual.v-violet { background: linear-gradient(135deg, rgba(139,127,255,0.16), rgba(139,127,255,0.02)); }
+  .proj-visual.v-coral { background: linear-gradient(135deg, rgba(255,107,107,0.16), rgba(255,107,107,0.02)); }
+
+  .mini-bars { display: flex; align-items: flex-end; gap: 5px; height: 50px; }
+  .mini-bars div { flex: 1; border-radius: 2px 2px 0 0; opacity: 0.8; }
+  .v-teal .mini-bars div { background: var(--accent-teal); }
+  .v-amber .mini-bars div { background: var(--accent-amber); }
+  .v-violet .mini-bars div { background: var(--accent-violet); }
+  .v-coral .mini-bars div { background: var(--accent-coral); }
+
+  .proj-body { padding: 22px; }
+  .proj-tags { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .proj-impact {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+  .proj-impact b { color: var(--accent-teal); }
+
+  @media (max-width: 860px) {
+    .proj-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-texture"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>Nitish K. Bharti</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Selected Work</span>
+    <h1 class="reveal">Dashboards &amp; automations that replaced hours of manual work.</h1>
+    <p style="max-width:560px; margin-top:18px" class="reveal">A sample of report automation, BI dashboard, and data-pipeline projects across five industries. Client names withheld by request — happy to walk through specifics on a call.</p>
+
+    <div class="filter-row">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="fintech">Fintech</button>
+      <button class="filter-pill" data-filter="ecommerce">E-Commerce</button>
+      <button class="filter-pill" data-filter="beauty">Beauty / FMCG</button>
+      <button class="filter-pill" data-filter="realestate">Real Estate</button>
+      <button class="filter-pill" data-filter="erp">ERP / SaaS</button>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap proj-grid" id="projGrid">
+
+    <div class="proj-card reveal" data-cat="fintech">
+      <div class="proj-visual v-teal">
+        <div class="mini-bars"><div style="height:40%"></div><div style="height:65%"></div><div style="height:50%"></div><div style="height:80%"></div><div style="height:60%"></div><div style="height:90%"></div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag tag-teal">Fintech</span><span class="tag">Power BI</span></div>
+        <h3>Loan Disbursal Tracking Dashboard</h3>
+        <p>Real-time view of disbursal funnel across branches, replacing a manual EOD Excel rollup that took 3 hours daily.</p>
+        <div class="proj-impact"><span>Manual hours cut</span><b>↓ 70%</b></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-cat="ecommerce">
+      <div class="proj-visual v-amber">
+        <div class="mini-bars"><div style="height:55%"></div><div style="height:35%"></div><div style="height:70%"></div><div style="height:45%"></div><div style="height:85%"></div><div style="height:60%"></div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag tag-amber">E-Commerce</span><span class="tag">SQL</span><span class="tag">BigQuery</span></div>
+        <h3>Order &amp; Return Rate Pipeline</h3>
+        <p>Automated SQL pipeline tracking return rates by SKU and category, feeding a weekly leadership scorecard.</p>
+        <div class="proj-impact"><span>Reports automated</span><b>12 → 1 click</b></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-cat="beauty">
+      <div class="proj-visual v-violet">
+        <div class="mini-bars"><div style="height:30%"></div><div style="height:60%"></div><div style="height:42%"></div><div style="height:75%"></div><div style="height:55%"></div><div style="height:95%"></div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag tag-violet">Beauty / FMCG</span><span class="tag">Excel</span><span class="tag">Power BI</span></div>
+        <h3>Salon Network Revenue MIS</h3>
+        <p>Consolidated MIS across 40+ salon locations into a single Power BI model with daily auto-refresh.</p>
+        <div class="proj-impact"><span>Locations consolidated</span><b>40+</b></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-cat="realestate">
+      <div class="proj-visual v-coral">
+        <div class="mini-bars"><div style="height:50%"></div><div style="height:70%"></div><div style="height:35%"></div><div style="height:65%"></div><div style="height:80%"></div><div style="height:45%"></div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag tag-coral">Real Estate</span><span class="tag">Google Sheets</span><span class="tag">Python</span></div>
+        <h3>Lead-to-Booking Conversion Tracker</h3>
+        <p>Sales funnel automation pulling CRM exports into a live conversion dashboard for regional managers.</p>
+        <div class="proj-impact"><span>Update frequency</span><b>Weekly → Daily</b></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-cat="erp">
+      <div class="proj-visual v-teal">
+        <div class="mini-bars"><div style="height:60%"></div><div style="height:45%"></div><div style="height:75%"></div><div style="height:55%"></div><div style="height:90%"></div><div style="height:70%"></div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag tag-teal">ERP / SaaS</span><span class="tag">SQL</span><span class="tag">Power BI</span></div>
+        <h3>Multi-Client Usage Analytics Suite</h3>
+        <p>Built a templated reporting suite reused across 15+ ERP clients, each with its own filtered dashboard view.</p>
+        <div class="proj-impact"><span>Clients served</span><b>15+</b></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-cat="fintech">
+      <div class="proj-visual v-amber">
+        <div class="mini-bars"><div style="height:45%"></div><div style="height:80%"></div><div style="height:55%"></div><div style="height:35%"></div><div style="height:70%"></div><div style="height:90%"></div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag tag-amber">Fintech</span><span class="tag">Excel</span><span class="tag">VBA</span></div>
+        <h3>Credit Risk Scoring Summary</h3>
+        <p>Automated weekly risk-bucket summary that previously took an analyst a full day to compile manually.</p>
+        <div class="proj-impact"><span>Turnaround</span><b>1 day → 20 min</b></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-meta">© 2026 Nitish Kumar Bharti · New Delhi, India</div>
+    <ul class="footer-links">
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.proj-card');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const filter = pill.dataset.filter;
+      cards.forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+      });
+    });
+  });
+</script>
+<noscript><style>.reveal{opacity:1!important;}</style></noscript>
+</body>
+</html>

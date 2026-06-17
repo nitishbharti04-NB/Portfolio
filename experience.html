@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Nitish Kumar Bharti</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-head { padding-top: 90px; padding-bottom: 20px; }
+
+  .timeline {
+    position: relative;
+    margin-top: 50px;
+    padding-left: 32px;
+    border-left: 2px solid var(--line);
+  }
+
+  .tl-item {
+    position: relative;
+    padding-bottom: 48px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+
+  .tl-dot {
+    position: absolute;
+    left: -41px;
+    top: 4px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--bg-base);
+    border: 3px solid var(--accent-teal);
+  }
+  .tl-item.current .tl-dot {
+    background: var(--accent-teal);
+    box-shadow: 0 0 0 5px rgba(0,224,199,0.15);
+  }
+
+  .tl-period { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-amber); margin-bottom: 6px; display: block; }
+  .tl-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 22px 24px;
+  }
+  .tl-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .tl-role { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; }
+  .tl-company { color: var(--accent-teal); font-size: 0.92rem; }
+
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .domain-card {
+    text-align: center;
+    padding: 24px 12px;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+  }
+  .domain-card .icon-badge {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  .domain-card h4 { font-size: 0.92rem; margin-bottom: 4px; }
+  .domain-card p { font-size: 0.78rem; }
+
+  .edu-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 24px;
+  }
+  .edu-icon {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--accent-amber);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .domain-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .timeline { padding-left: 24px; }
+    .tl-dot { left: -33px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-texture"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>Nitish K. Bharti</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="contact.html" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Career Path</span>
+    <h1 class="reveal">10+ years, five industries, one consistent thread: better reporting.</h1>
+  </div>
+</header>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="timeline">
+
+      <div class="tl-item current reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-period">2023 — Present</span>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <div><div class="tl-role">MIS Manager</div><div class="tl-company">Marg ERP</div></div>
+            <span class="tag tag-teal">Current</span>
+          </div>
+          <p>Leading MIS &amp; reporting automation for ERP/SaaS clients — building reusable dashboard templates and managing a team of analysts across multiple accounts.</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-period">2021 — 2023</span>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <div><div class="tl-role">Senior Data Analyst</div><div class="tl-company">VLCC</div></div>
+          </div>
+          <p>Consolidated revenue and performance MIS across a large salon &amp; wellness network into unified Power BI dashboards with daily auto-refresh.</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-period">2019 — 2021</span>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <div><div class="tl-role">Data Analyst</div><div class="tl-company">Noon E-commerce India</div></div>
+          </div>
+          <p>Built SQL/BigQuery pipelines tracking order, return, and category-level performance, feeding weekly leadership scorecards.</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-period">2017 — 2019</span>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <div><div class="tl-role">Business Analyst</div><div class="tl-company">Square Yards Limited</div></div>
+          </div>
+          <p>Automated lead-to-booking conversion tracking for regional sales teams, replacing static weekly Excel reports with live dashboards.</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-period">2015 — 2017</span>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <div><div class="tl-role">MIS Executive</div><div class="tl-company">PaisaBazaar</div></div>
+          </div>
+          <p>Started in fintech reporting — built foundational Excel and SQL skills automating loan disbursal and credit-risk tracking reports.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Industry Depth</span>
+      <h2>Five domains, one analytical approach.</h2>
+      <p>Every industry has different jargon and KPIs — the underlying discipline of clean data and honest reporting stays the same.</p>
+    </div>
+    <div class="domain-grid">
+      <div class="domain-card reveal">
+        <div class="icon-badge" style="background:rgba(0,224,199,0.12); color:var(--accent-teal)">FT</div>
+        <h4>Fintech</h4>
+        <p>Risk &amp; disbursal MIS</p>
+      </div>
+      <div class="domain-card reveal">
+        <div class="icon-badge" style="background:rgba(255,180,84,0.12); color:var(--accent-amber)">EC</div>
+        <h4>E-Commerce</h4>
+        <p>Order &amp; returns analytics</p>
+      </div>
+      <div class="domain-card reveal">
+        <div class="icon-badge" style="background:rgba(139,127,255,0.12); color:var(--accent-violet)">FB</div>
+        <h4>FMCG / Beauty</h4>
+        <p>Multi-location revenue MIS</p>
+      </div>
+      <div class="domain-card reveal">
+        <div class="icon-badge" style="background:rgba(255,107,107,0.12); color:var(--accent-coral)">RE</div>
+        <h4>Real Estate</h4>
+        <p>Sales funnel tracking</p>
+      </div>
+      <div class="domain-card reveal">
+        <div class="icon-badge" style="background:rgba(0,224,199,0.12); color:var(--accent-teal)">ES</div>
+        <h4>ERP / SaaS</h4>
+        <p>Templated client analytics</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Education</span>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">JP</div>
+      <div>
+        <h3>Bachelor in Account Administration</h3>
+        <p>Jai Prakash University · 2013 – 2016</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-meta">© 2026 Nitish Kumar Bharti · New Delhi, India</div>
+    <ul class="footer-links">
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<noscript><style>.reveal{opacity:1!important;}</style></noscript>
+</body>
+</html>
